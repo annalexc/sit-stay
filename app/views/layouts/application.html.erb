@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>SitStay</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js" charset="utf-8"></script>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="ui container"> 
+  <div class="page-wrapper">
+
+    <div class="panel" id="intro-bar">
+      <h1 id="left">SIT</h1>
+        <%= render 'intro' %>
+      <h1 id="right">STAY</h1>
+      <div class="paw-container hidden" id="one"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="two"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="three"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="four"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="five"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="six"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="seven"><%= render 'paw' %></div>
+      <div class="paw-container hidden" id="eight"><%= render 'paw' %></div>
+    </div>
+    <div class="panel" id="selection1">
+      
+    </div>
+    
+    <div class="panel" id="selection2">
+      
+    </div>
+
+    <div class="panel" id="selection3">
+      
+    </div>
+  
+    <%= yield %>
+  </div>
+
+</div>
+
+</body>
+</html>
+

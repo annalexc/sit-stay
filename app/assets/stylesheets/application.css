@@ -1,0 +1,222 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  overflow: scroll
+}
+
+.page-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  overflow: scroll;
+}
+
+
+.panel {
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+#intro-bar{ 
+  background-color: #FEFAEC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#selection1{ 
+  background-color: #E9C3D6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.paw {
+  fill: #E9C3D6;
+}
+
+.paw-container {
+  position: absolute;
+  height: 15%;
+}
+
+.paw-container#one {
+  bottom: 3%;
+  right: 15%;
+  transform: rotate(35deg);
+}
+
+.paw-container#two {
+  bottom: 9%;
+  right: 1%;
+  transform: rotate(30deg);
+}
+
+.paw-container#three {
+  bottom: 26%;
+  right: 9%;
+  transform: rotate(23deg);
+}
+
+.paw-container#four {
+  bottom: 32%;
+  right: -5%;
+  transform: rotate(14deg);
+}
+
+.paw-container#five {
+  bottom: 54%;
+  right: 4%;
+  transform: rotate(6deg);
+}
+
+.paw-container#six {
+  bottom: 63%;
+  right: -8%;
+  transform: rotate(0deg);
+}
+
+
+.paw-container#seven {
+  bottom: 79%;
+  right: 4%;
+  transform: rotate(-6deg);
+}
+
+.paw-container#eight {
+  bottom: 90%;
+  right: -9%;
+  transform: rotate(-8deg);
+}
+
+
+h1 {
+  font: 12rem 'Fredoka One';
+  color: #37B7B5;
+  margin: 0 auto;
+  text-shadow: 8px 8px 0 #E9C3D6;
+}
+
+h1#right {
+  padding-right: 120px;
+}
+
+h1#left{
+  padding-left: 120px;
+}
+/*.svg-container {
+  height: 50%;
+  width: 50%;
+}*/
+svg {
+  height: 72%;
+  width: 100%;
+  
+}
+
+#intro-heart {
+  padding: 0 10px;
+  /*-webkit-filter: drop-shadow( 5px 6px 0 #A0E4E0);
+          filter: drop-shadow( 5px 6px 0 #A0E4E0);*/
+}
+
+
+
+.draw-path {
+  fill: none;
+  stroke: #37B7B5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 12;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+}
+
+
+
+path.draw-path {
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: draw;
+  animation-duration: 4s;
+  animation-delay: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillIn {
+  from { fill-opacity: 0; }
+  to { fill-opacity: 1; }
+}
+
+@media all and (max-width:1200px) {
+  h1 {
+    font-size: 10rem;
+  }
+
+}
+
+@media all and (max-width:1000px) {
+  h1 { font-size: 8rem; }
+  h1#right {  padding-right: 80px;}
+  h1#left { padding-left: 80px; }
+
+}
+
+
+@media all and (max-width:800px) {
+  h1 { font-size: 6rem; }
+  h1#right {  padding-right: 80px;}
+  h1#left { padding-left: 80px; }
+
+}
+
+@media all and (max-width:630px) {
+  h1 { font-size: 4rem; }
+  h1#right {  padding-right: 40px;}
+  h1#left { padding-left: 40px; }
+
+}
+
+
+
+
