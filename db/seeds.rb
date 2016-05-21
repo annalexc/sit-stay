@@ -4,7 +4,7 @@
     name:           Faker::Name.name,
     email:          Faker::Internet.email,
     pet_type:       Faker::StarWars.specie,
-    image_url:      Faker::Avatar.image,
+    image_url:      'http://lorempixel.com/300/300/animals/',
     street_address: Faker::Address.street_address,
     city:           Faker::Address.city,
     state:          Faker::Address.state,

@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="SitStayApp">
 <head>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>SitStay</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'app' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-controller="PostingsController">
 <div class="ui container"> 
   <div class="page-wrapper">
 
+
+    <!-- INTRO PANEL -->
     <div class="panel" id="intro-bar">
-      <h1 id="left">SIT</h1>
+      
         <%= render 'intro' %>
-      <h1 id="right">STAY</h1>
+       
+      
       <div class="paw-container hidden" id="one"><%= render 'paw' %></div>
       <div class="paw-container hidden" id="two"><%= render 'paw' %></div>
       <div class="paw-container hidden" id="three"><%= render 'paw' %></div>
@@ -26,18 +30,69 @@
       <div class="paw-container hidden" id="six"><%= render 'paw' %></div>
       <div class="paw-container hidden" id="seven"><%= render 'paw' %></div>
       <div class="paw-container hidden" id="eight"><%= render 'paw' %></div>
-    </div>
-    <div class="panel" id="selection1">
-      
-    </div>
-    
-    <div class="panel" id="selection2">
-      
+
     </div>
 
-    <div class="panel" id="selection3">
-      
+
+    <!-- PET OWNER or PET SITTER -->
+    <div id="selection1" class="panel">
+      <div class="ui two column middle aligned stackable grid" id="selection1-grid">
+        <div class="center aligned column">
+          <a class="ui inverted huge button choice" href="#selection2">PET OWNER</a>
+        </div>
+        <div class="ui vertical divider">
+          <div id="or">Or</div>
+        </div>
+        <div class="center aligned column">
+          <div class="center aligned column">
+            <a class="ui inverted huge button choice" href="#view-all">PET SITTER</a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- PET OWNER INFO -->
+    <div class="panel" id="selection2">
+       <%= render 'petowner' %>
+    </div>
+
+    <!-- PET INFO -->
+    <div class="panel" id="selection3">
+      <%= render 'petinfo' %>
+    </div>
+
+    <!-- SIT/STAY INFO -->
+    <div class="panel" id="selection4">
+      <%= render 'sitstayinfo' %>
+    </div>
+    
+
+    <!-- VIEW ALL POSTINGS -->
+    <div class="panel" id="view-all">
+      <h2 class="section-title">POSTINGS</h2>
+      <div class="ui five stackable cards">
+        <div class="card" ng-repeat="posting in postings">
+          <div class="image">
+            <img ng-src={{posting.image_url}}>
+          </div>
+          <div class="content">
+            <div class="header">{{ posting.name }}</div>
+            <div class="meta">
+            </div>
+            <div class="description">
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+            </span>
+            <button type="button" ng-click="removePosting(posting)">Remove</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    
   
     <%= yield %>
   </div>

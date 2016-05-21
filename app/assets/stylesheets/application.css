@@ -14,14 +14,30 @@
  *= require_tree .
  */
 @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Sacramento);
+html, body {
+  transition: 1s all;
+}
 
 body {
   box-sizing: border-box;
   margin: 0 auto;
-  overflow: auto;
   height: 100%;
   width: 100%;
-  overflow: scroll
+  /*overflow: scroll;*/
+}
+
+.secondary-font{
+  font-family: 'Open Sans Condensed';
+  text-align: center;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font: 3.5rem 'Fredoka One';
+  margin: 5px auto!important;
 }
 
 .page-wrapper {
@@ -31,9 +47,10 @@ body {
   top: 0;
   left: 0;
   background-color: transparent;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 
+/* STYLING FOR EACH PANEL */
 
 .panel {
   float: left;
@@ -41,25 +58,118 @@ body {
   width: 100%;
 }
 
+.pet-panel {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 33.33%;
+  transition: background-color 0.5s ease;
+}
+
+
+.pet-panel:hover {
+  background-color: rgba(33,171,155,0.85);
+}
+
+h2.pet-title, h3.pet-title{
+  color: rgba(255,255,255,.5);
+  position: absolute;
+  height: 30%;
+  width: 100%;
+  top: 70%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2.pet-title {
+  font-size: 11.5rem;
+}
+
+h3.pet-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin: 0 auto;
+}
+
 #intro-bar{ 
   background-color: #FEFAEC;
+  background: -moz-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
+  background: -webkit-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
+  background: linear-gradient(125deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-
 
 #selection1{ 
+  position: relative;
   background-color: #E9C3D6;
+  background: -moz-linear-gradient(55deg, #E9C3D6 35%, #E9C3D6 35%, #E2B0C9 35%); 
+  background: -webkit-linear-gradient(55deg, #E9C3D6 35%, #E9C3D6 35%, #E2B0C9 35%); 
+  background: linear-gradient(-125deg, #E9C3D6 35%, #E9C3D6 35%, #E2B0C9 35%); 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
+#selection1-grid{
+  width: 100%;
+}
+
+#selection2{ 
+  position: relative;
+  color: white;
+  background-color: #625772;
+  background: -moz-linear-gradient(-60deg, #625772 50%, #625772 50%, #716780 50%); 
+  background: -webkit-linear-gradient(-60deg, #625772 50%, #625772 50%, #716780 50%); 
+  background: linear-gradient(120deg, #625772 50%, #625772 50%, #716780 50%); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: min-content;
+}
+
+#selection3{ 
+  position: relative;
+  background-color: #A9EEE6;
+  background: -moz-linear-gradient(50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
+  background: -webkit-linear-gradient(50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
+  background: linear-gradient(-130deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%);
+  min-height: min-content;
+}
+
+#selection4{ 
+  position: relative;
+  background-color: #FEFAEC;
+  background: -moz-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
+  background: -webkit-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
+  background: linear-gradient(125deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%);
+  min-height: min-content;
+}
+
+
+#view-all{ 
+  position: relative;
+  background-color: #A9EEE6;
+  background: -moz-linear-gradient(-60deg, #A9EEE6 45%, #A9EEE6 45%, #7EE6DA 45%); 
+  background: -webkit-linear-gradient(-60deg, #A9EEE6 45%, #A9EEE6 45%, #7EE6DA 45%); 
+  background: linear-gradient(120deg, #A9EEE6 45%, #A9EEE6 45%, #7EE6DA 45%);
+  padding: 3%;
+  min-height: min-content;
+}
+
+
+
+/* STYLING FOR THE INTRO BAR */
+
 .paw {
-  fill: #E9C3D6;
+  /*fill: #A0E4E0;*/
+  fill: #FAE28C;
 }
 
 .paw-container {
@@ -103,7 +213,6 @@ body {
   transform: rotate(0deg);
 }
 
-
 .paw-container#seven {
   bottom: 79%;
   right: 4%;
@@ -120,61 +229,179 @@ body {
 h1 {
   font: 12rem 'Fredoka One';
   color: #37B7B5;
-  margin: 0 auto;
+  margin: 0;
   text-shadow: 8px 8px 0 #E9C3D6;
 }
 
 h1#right {
-  padding-right: 120px;
+  padding-right: 60px;
+ 
 }
 
 h1#left{
-  padding-left: 120px;
+  padding-left: 60px;
+  /*margin-right: 20px;*/
 }
-/*.svg-container {
-  height: 50%;
-  width: 50%;
-}*/
-svg {
-  height: 72%;
+
+.svg-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+}
+
+svg.paw-svg {
+  height: 80%;
   width: 100%;
-  
+  margin: 0 auto;
 }
 
-#intro-heart {
-  padding: 0 10px;
-  /*-webkit-filter: drop-shadow( 5px 6px 0 #A0E4E0);
-          filter: drop-shadow( 5px 6px 0 #A0E4E0);*/
+svg#intro-heart{
+  text-align: center;
+  height: 60%;
+  width: 50%;
+  margin: 10px 0 0 0;
+  padding: 0 15px 0 10px;
+}
+
+.pet-panel svg {
+  height: 75%;
+  width: 90%;
+  margin: 60px 5% 0;
+}
+
+.draw-heart.main:hover, text:hover path.draw-heart{
+  fill: rgba(205,120,163,0.65);
 }
 
 
-
-.draw-path {
-  fill: none;
+path.draw-heart, path.draw-pets {
+  fill-opacity: 0;
+  fill: transparent;
   stroke: #37B7B5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 12;
-  stroke-dasharray: 5000;
-  stroke-dashoffset: 5000;
-}
-
-
-
-path.draw-path {
-  fill-opacity: 0;
+  stroke-width: 13;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-iteration: 1;
-  animation-name: draw;
-  animation-duration: 4s;
+  animation-name: draw, fillIn;
+  animation-duration: 3s, 3s;
   animation-delay: 0;
+  transition: fill 0.25s linear;
+}
+
+path.draw-heart.main {
+  fill-opacity: 1;
+  fill: #E9C3D6;
+}
+
+#click-me {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#click-me p {
+  padding-right: 10%;
+  padding-top: 12%;
+  font: 2rem 'Open Sans Condensed';
+  color: #37B7B5;
+  z-index: -100;
+}
+
+
+input[type="text"]{
+  background-color: transparent !important;
+  border: 3px solid white !important;
+  border-radius: 0.5rem !important;
+  color: #7EE6DA !important;
+  padding: 10px !important;
+}
+
+input[type="text"]:focus{ 
+  border: 3px solid #7EE6DA !important;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 8%;
+  width: 100%;
+  right: 0;
+}
+
+#or {
+  font: 4rem 'Sacramento';
+  line-height: 1;
+  text-transform: lowercase;
+  color: black;
+  padding: 0 0 20px 0;
+  margin: -31px 5px 0 5px;
+}
+
+a.ui.button.choice{
+  font: 4rem 'Fredoka One';
+  line-height: 1;
+  padding: 30px;
+  margin: 0 auto;
+  border: 5px solid;
+  border-radius: 0.75rem;
+}
+
+/*#owner-form {
+  width: 80% !important;
+  margin: 0 auto;
+}*/
+
+
+label {
+  font: 1.75rem 'Open Sans Condensed' !important;
+  /*line-height: 1.1 !important;*/
+  margin-bottom: 10px;
+}
+
+
+label.pet-select > input {
+  position: absolute;
+  visibility: hidden; 
+}
+
+label.pet-select > input + svg { 
+  cursor: pointer;
+}
+
+label.pet-select > input:checked + svg {
+  stroke-width: 3;
+  stroke: white;
+}
+
+
+.fancy {
+  font: 2.5rem 'Sacramento';
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+a:hover{
+  cursor: pointer;
 }
 
 .hidden {
   display: none;
 }
-
 
 
 @keyframes draw {
@@ -188,34 +415,99 @@ path.draw-path {
   to { fill-opacity: 1; }
 }
 
+@keyframes fillMain {
+  to {
+    stroke-dashoffset: 0;
+  }
+  from { fill: transparent; }
+  to { fill: #E9C3D6; }
+}
+
+
 @media all and (max-width:1200px) {
   h1 {
-    font-size: 10rem;
+    font-size: 9rem;
   }
 
 }
 
 @media all and (max-width:1000px) {
-  h1 { font-size: 8rem; }
-  h1#right {  padding-right: 80px;}
-  h1#left { padding-left: 80px; }
+  h1 { font-size: 7rem; }
+  h1#right {  padding-right: 15px;}
+  h1#left { padding-left: 15px; }
+  a.ui.button.choice{font-size:3rem;}
 
 }
 
 
 @media all and (max-width:800px) {
-  h1 { font-size: 6rem; }
-  h1#right {  padding-right: 80px;}
-  h1#left { padding-left: 80px; }
+  h1#right, h1#left { 
+    font-size: 7rem;
+    padding: 0;
+   }
+
+   #or { margin: 0; }
+  .svg-container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  svg#intro-heart {
+    text-align: center;
+    height: 37%;
+    width: 90%;
+    margin: 17px 0 -10px 0;
+    /*padding: 0 15px 0 10px;*/
+  }
+
+  a.ui.button.choice{
+    /*padding: 20px;*/
+    font-size: 2.5rem;
+  }
+  .paw-container{
+    width: 16%;
+  }
+
+  .section-title { font-size: 2rem; } 
+
+  .pet-panel {
+    float: left;
+    height: 33.33%;
+    width: 100%;
+  }
+
+  .pet-panel svg{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  h2.pet-title, h3.pet-title {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2.pet-title { font-size: 9rem; }
+  h3.pet-title { font-size: 4rem; }
+ 
 
 }
+
 
 @media all and (max-width:630px) {
   h1 { font-size: 4rem; }
-  h1#right {  padding-right: 40px;}
-  h1#left { padding-left: 40px; }
+  .section-title {font-size: 1.5rem;}
+  .fancy { font-size: 1.6rem; margin-bottom: 0; }
+  label { font-size: 1.4rem !important; line-height: 1.1 !important; }
 
 }
+
+
 
 
 

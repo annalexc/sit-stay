@@ -12,10 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
 
 
 $(function(){
-  
+
+
+   $('a').on('click', function(event) {   
+    event.preventDefault();
+    var target = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(target).offset().top
+      },500);
+  });
+
+
   setTimeout(function(){
     var fade = setInterval(function(){
       if (($('.hidden').length) === 0){
@@ -26,10 +37,23 @@ $(function(){
     },150);
   }, 1500);
 
-})
+
+  // Change the background color of the selected pet panel
+  $('.pet-panel').on('click', function() {
+    pets = $('.pet-panel');
+    for(var i = 0; i<pets.length; i++){
+      $(pets[i]).css('background-color', '');
+      $(pets[i]).find('.pet-title').css('color', 'rgba(255,255,255,0.5');
+    }
+    $(this).css('background-color', '#CD78A3');
+    $(this).find('.pet-title').css('color', 'black');
+  });
 
 
+}); // End Document Ready
 
+
+// Fade in the paw prints on page load
 function fadeIn(){
   var paws = $('.paw-container');
   i = 0;
@@ -43,3 +67,6 @@ function fadeIn(){
     'display' : 'flex' 
   });
 };
+
+
+
