@@ -570,10 +570,7 @@ i.big.remove.circle.icon {
   overflow: hidden;
 }
 
-/*img {
-  margin-top: -10px;
-}*/
-.comments {
+div.comments {
   position: absolute;
   background-color: rgba(0,0,0,0.4);
   border-radius: 0.25rem;
