@@ -17,7 +17,7 @@ sitStay.controller("PostingsController", ["$scope", "$http", function( $scope, $
         name: $scope.name,
         email: $scope.email,
         pet_type: $scope.pet_type,
-        // image_url: $scope.image_url,
+        comments: $scope.comments,
         street_address: $scope.street_address,
         city: $scope.city,
         state: $scope.state,
