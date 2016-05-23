@@ -1,22 +1,25 @@
+<header>
+<h2 class="section-title">What kind of pet do you have?</h2>
+</header>
 <div class="pet-panel">
-  <label class="pet-select">
-    <input type="radio" name="fb" value="small" />
+  <label class="pet-select selection" href="#sitstayinfo">
+    <input type="radio" name="pet_type" ng-model="pet_type" value="dog" />
     <%= render 'puppy' %>
     <h2 class="pet-title secondary-font">DOG</h2>
   </label>
 </div>
 
 <div class="pet-panel">
-  <label class="pet-select">
-    <input type="radio" name="fb" value="small" />
+  <label class="pet-select selection" href="#sitstayinfo">
+    <input type="radio" name="pet_type" ng-model="pet_type" value="cat" />
     <%= render 'cat' %>
     <h2 class="pet-title secondary-font">CAT</h2>
   </label>
 </div>
 
 <div class="pet-panel">
-  <label class="pet-select">
-    <input type="radio" name="fb" value="small" />
+  <label class="pet-select selection" href="#sitstayinfo">
+    <input type="radio" name="pet_type" ng-model="pet_type" value="other" />
     <%= render 'other' %>
     <h3 class="pet-title secondary-font">FURRY, FINNED, FEATHERED</h3>
   </label>

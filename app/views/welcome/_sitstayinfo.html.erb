@@ -1,1 +1,23 @@
-<h2>DATE SELECT PANEL</h2>
+<h2 class="section-title">And when will you need a pet sitter?</h2>
+<div class="ui text container">
+  <div class="ui huge form" id="owner-form">
+    <div class="two fields">
+      <div class="required field">
+        <label>Start Date</label>
+        <input type="text" class="date-select" id="start-date" name="start_date" ng-model="start_date"/>
+      </div>
+      <div class="required field">
+        <label>End Date</label>
+        <input type="text" class="date-select" id="end-date" name="end_date" ng-model="end_date"/>
+      </div>
+    </div>
+    <div class="field">
+    <div class="ui center aligned container">
+      <button type="button" class="ui huge button selection" href="#viewpostings" ng-click="savePosting()">POST IT!</button>
+    </div>
+    </div>
+  </div>
+
+  
+
+</div>

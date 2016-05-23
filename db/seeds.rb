@@ -3,15 +3,13 @@
   Posting.create({
     name:           Faker::Name.name,
     email:          Faker::Internet.email,
-    pet_type:       Faker::StarWars.specie,
-    image_url:      'http://lorempixel.com/300/300/animals/',
+    pet_type:       ['dog', 'cat', 'other'].sample,
     street_address: Faker::Address.street_address,
     city:           Faker::Address.city,
     state:          Faker::Address.state,
     zipcode:        Faker::Address.zip,
     start_date:     Faker::Date.forward(1),
     end_date:       Faker::Date.forward(23),
-    is_sit_post:    1,
     is_stay_post:   rand(0..1)
     })
 

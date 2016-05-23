@@ -16,6 +16,10 @@
 @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Gorditas:400,700);
+
+
+
 html, body {
   transition: 1s all;
 }
@@ -25,10 +29,13 @@ body {
   margin: 0 auto;
   height: 100%;
   width: 100%;
-  /*overflow: scroll;*/
 }
 
-.secondary-font{
+a, a:hover {
+  color: black;
+}
+
+.secondary-font {
   font-family: 'Open Sans Condensed';
   text-align: center;
   margin: 0 auto;
@@ -37,7 +44,7 @@ body {
 .section-title {
   text-align: center;
   font: 3.5rem 'Fredoka One';
-  margin: 5px auto!important;
+  margin: 5px auto 20px !important;
 }
 
 .page-wrapper {
@@ -50,50 +57,21 @@ body {
   /*overflow: scroll;*/
 }
 
+
+/**************************/
 /* STYLING FOR EACH PANEL */
+/**************************/
 
 .panel {
   float: left;
   height: 100%;
   width: 100%;
+  min-height: min-content;
 }
 
-.pet-panel {
-  position: relative;
-  float: left;
-  height: 100%;
-  width: 33.33%;
-  transition: background-color 0.5s ease;
-}
-
-
-.pet-panel:hover {
-  background-color: rgba(33,171,155,0.85);
-}
-
-h2.pet-title, h3.pet-title{
-  color: rgba(255,255,255,.5);
-  position: absolute;
-  height: 30%;
-  width: 100%;
-  top: 70%;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h2.pet-title {
-  font-size: 11.5rem;
-}
-
-h3.pet-title {
-  font-size: 4.5rem;
-  line-height: 1.1;
-  margin: 0 auto;
-}
 
 #intro-bar{ 
+  position: relative;
   background-color: #FEFAEC;
   background: -moz-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
   background: -webkit-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
@@ -104,29 +82,46 @@ h3.pet-title {
   align-items: center;
 }
 
-#selection1{ 
+#ownersitter{ 
   position: relative;
   background-color: #E9C3D6;
-  background: -moz-linear-gradient(55deg, #E9C3D6 35%, #E9C3D6 35%, #E2B0C9 35%); 
-  background: -webkit-linear-gradient(55deg, #E9C3D6 35%, #E9C3D6 35%, #E2B0C9 35%); 
-  background: linear-gradient(-125deg, #E9C3D6 35%, #E9C3D6 35%, #E2B0C9 35%); 
+  background: -moz-linear-gradient(65deg, #E9C3D6 45%, #E9C3D6 45%, #E2B0C9 45%); 
+  background: -webkit-linear-gradient(65deg, #E9C3D6 45%, #E9C3D6 45%, #E2B0C9 45%); 
+  background: linear-gradient(-115deg, #E9C3D6 45%, #E9C3D6 45%, #E2B0C9 45%); 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-#selection1-grid{
+#ownersitter-grid{
   width: 100%;
 }
 
-#selection2{ 
+#lookingfor{ 
+  position: relative;
+  background-color: #64D3CD;
+  background: -moz-linear-gradient(-60deg, #92E0DC 40%, #92E0DC 40%, #64D3CD 40%); 
+  background: -webkit-linear-gradient(-60deg, #92E0DC 40%, #92E0DC 40%, #64D3CD 40%); 
+  background: linear-gradient(120deg, #92E0DC 40%, #92E0DC 40%, #64D3CD 40%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#lookingfor-grid{
+  width: 100%;
+}
+
+
+#petowner{ 
   position: relative;
   color: white;
   background-color: #625772;
-  background: -moz-linear-gradient(-60deg, #625772 50%, #625772 50%, #716780 50%); 
-  background: -webkit-linear-gradient(-60deg, #625772 50%, #625772 50%, #716780 50%); 
-  background: linear-gradient(120deg, #625772 50%, #625772 50%, #716780 50%); 
+  background: -moz-linear-gradient(60deg, #625772 50%, #625772 50%, #716780 50%); 
+  background: -webkit-linear-gradient(60deg, #625772 50%, #625772 50%, #716780 50%); 
+  background: linear-gradient(-120deg, #625772 50%, #625772 50%, #716780 50%); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,43 +129,79 @@ h3.pet-title {
   min-height: min-content;
 }
 
-#selection3{ 
+#petinfo{ 
   position: relative;
   background-color: #A9EEE6;
-  background: -moz-linear-gradient(50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
-  background: -webkit-linear-gradient(50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
-  background: linear-gradient(-130deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%);
+  background: -moz-linear-gradient(-50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
+  background: -webkit-linear-gradient(-50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
+  background: linear-gradient(130deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%);
   min-height: min-content;
 }
 
-#selection4{ 
+#sitstayinfo{ 
   position: relative;
   background-color: #FEFAEC;
-  background: -moz-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
-  background: -webkit-linear-gradient(-55deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%); 
-  background: linear-gradient(125deg, #FEFAEC 45%, #FEFAEC 45%, #FDF4D4 45%);
-  min-height: min-content;
-}
+  background: -moz-linear-gradient(55deg, #FEFAEC 40%, #FEFAEC 40%, #FDF4D4 40%); 
+  background: -webkit-linear-gradient(-55deg, #FEFAEC 40%, #FEFAEC 40%, #FDF4D4 40%); 
+  background: linear-gradient(-125deg, #FEFAEC 40%, #FEFAEC 40%, #FDF4D4 40%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: min-content;}
 
 
-#view-all{ 
+#viewpostings{ 
   position: relative;
   background-color: #A9EEE6;
   background: -moz-linear-gradient(-60deg, #A9EEE6 45%, #A9EEE6 45%, #7EE6DA 45%); 
   background: -webkit-linear-gradient(-60deg, #A9EEE6 45%, #A9EEE6 45%, #7EE6DA 45%); 
   background: linear-gradient(120deg, #A9EEE6 45%, #A9EEE6 45%, #7EE6DA 45%);
   padding: 3%;
+  height: auto;
   min-height: min-content;
 }
 
 
+/*******************************/
+/* STYLING FOR INTRO BAR PANEL */
+/*******************************/
 
-/* STYLING FOR THE INTRO BAR */
 
-.paw {
-  /*fill: #A0E4E0;*/
-  fill: #FAE28C;
+
+#intro-panel-one, #intro-panel-two, #intro-panel-three {
+  position: relative;
+  float: left;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
+#intro-panel-one {
+  justify-content: flex-end;
+  width: 28%;
+}
+
+#intro-panel-two {
+  justify-content: center;
+  width: 33%;
+}
+
+#intro-panel-three {
+  justify-content: flex-start;
+  width: 39%;
+}
+
+
+h1.intro {
+  font: 12.5rem 'Gorditas';
+  font-weight: 700;
+  /*color: #37B7B5;*/
+  color: #625772;
+  margin: 0;
+  text-shadow: 8px 8px 0 #64D3CD;
+}
+
+.paw { fill: #FAE28C; }
 
 .paw-container {
   position: absolute;
@@ -225,32 +256,6 @@ h3.pet-title {
   transform: rotate(-8deg);
 }
 
-
-h1 {
-  font: 12rem 'Fredoka One';
-  color: #37B7B5;
-  margin: 0;
-  text-shadow: 8px 8px 0 #E9C3D6;
-}
-
-h1#right {
-  padding-right: 60px;
- 
-}
-
-h1#left{
-  padding-left: 60px;
-  /*margin-right: 20px;*/
-}
-
-.svg-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 90%;
-  height: 100%;
-}
-
 svg.paw-svg {
   height: 80%;
   width: 100%;
@@ -260,26 +265,20 @@ svg.paw-svg {
 svg#intro-heart{
   text-align: center;
   height: 60%;
-  width: 50%;
-  margin: 10px 0 0 0;
-  padding: 0 15px 0 10px;
-}
-
-.pet-panel svg {
-  height: 75%;
   width: 90%;
-  margin: 60px 5% 0;
+  margin: 0 3% 0 7%;
+  /*-webkit-filter: drop-shadow(6px 8px 0 #64D3CD);
+  filter: drop-shadow(6px 8px 0 #64D3CD);*/
 }
 
-.draw-heart.main:hover, text:hover path.draw-heart{
-  fill: rgba(205,120,163,0.65);
-}
+.draw-heart.main:hover { fill: #DCA0BE; }
 
 
 path.draw-heart, path.draw-pets {
   fill-opacity: 0;
   fill: transparent;
-  stroke: #37B7B5;
+  stroke: #625772;
+  /*stroke: #37B7B5;*/
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 13;
@@ -290,16 +289,21 @@ path.draw-heart, path.draw-pets {
   animation-iteration: 1;
   animation-name: draw, fillIn;
   animation-duration: 3s, 3s;
-  animation-delay: 0;
+  animation-delay: 0,;
   transition: fill 0.25s linear;
 }
 
 path.draw-heart.main {
-  fill-opacity: 1;
-  fill: #E9C3D6;
+  /*fill-opacity: 0;*/
+  fill: #CD78A3;
 }
 
-#click-me {
+text#click-me {
+  padding-right: 10%;
+  padding-top: 12%;
+  font: 3rem 'Open Sans Condensed';
+  fill: #625772 !important;
+  fill-opacity: 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -308,26 +312,44 @@ path.draw-heart.main {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: fillIn;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  z-index: 10;
 }
 
-#click-me p {
-  padding-right: 10%;
-  padding-top: 12%;
-  font: 2rem 'Open Sans Condensed';
-  color: #37B7B5;
-  z-index: -100;
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
+@keyframes fillIn {
+  from { fill-opacity: 0; }
+  to { fill-opacity: 1; }
+}
+
+
+/***********************/
+/* INPUT FIELD STYLING */
+/***********************/
 
 input[type="text"]{
   background-color: transparent !important;
-  border: 3px solid white !important;
   border-radius: 0.5rem !important;
-  color: #7EE6DA !important;
-  padding: 10px !important;
+  padding: 12px !important;
 }
 
-input[type="text"]:focus{ 
+input[type="text"].pet-owner {
+  border: 3px solid white !important;
+  color: #7EE6DA !important;
+}
+
+input[type="text"].pet-owner:focus{ 
   border: 3px solid #7EE6DA !important;
 }
 
@@ -335,36 +357,146 @@ input[type="text"]:focus{
   color: rgba(255,255,255,0.35) !important;
 }
 
-footer {
+input[type="text"].date-select {
+  border: 4px solid rgba(0,0,0,0.6) !important;
+  color: #CD78A3 !important;
+}
+
+input[type="text"].date-select:focus{ 
+  border: 4px solid #CD78A3 !important;
+}
+
+
+.mint{
+  background-color: #7EE6DA !important;
+}
+
+.mint-text {
+  color: #7EE6DA;
+}
+
+p.direction {
+  font: 1.5rem 'Open Sans Condensed';
+  margin: 0 auto 5px;
+}
+
+footer, header {
   position: absolute;
-  bottom: 0;
-  height: 8%;
+  text-align: center;
+  height: 15%;
   width: 100%;
-  right: 0;
+  left: 0;
+}
+
+header { 
+  top: 0;
+  padding-top: 3.75%;
+  z-index: 10;
+}
+
+footer { bottom: 0; }
+
+.bg-text{
+  position: absolute;
+  width: 100%;
+  top: 15%; 
+  text-align: center;
+  z-index: 100;
+}
+
+#bg-one {
+  color: rgba(215,147,181,1);
+  font: 11rem 'Fredoka One';
+}
+
+#bg-two {
+  top: 18%;
+  line-height: 1.2;
+  color: rgba(52,183,176,0.9);
+  font: 7rem 'Fredoka One';
 }
 
 #or {
-  font: 4rem 'Sacramento';
-  line-height: 1;
+  font: 5.5rem 'Sacramento';
+  line-height: 0.8;
   text-transform: lowercase;
   color: black;
   padding: 0 0 20px 0;
   margin: -31px 5px 0 5px;
 }
 
-a.ui.button.choice{
-  font: 4rem 'Fredoka One';
-  line-height: 1;
+a.ui.button.selection, h2.ui.button.selection, button.ui.button {
+  font-family: 'Fredoka One';
+  font-weight: 400;
+  line-height: 0.9;
   padding: 30px;
-  margin: 0 auto;
   border: 5px solid;
   border-radius: 0.75rem;
 }
 
-/*#owner-form {
-  width: 80% !important;
-  margin: 0 auto;
-}*/
+a.ui.button.selection {
+  margin: 50px auto 0;
+  font-size: 4rem;
+}
+
+h2.ui.button.selection{
+  margin: 75px auto 10px;
+  font-size: 5rem;
+}
+
+button.ui.button.selection{
+  margin: 50px auto 0;
+  font-size: 3rem;
+}
+
+p.stay-select{
+  font-size: 2.5rem;
+  color: black;
+}
+
+
+.pet-panel {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 33.33%;
+  transition: background-color 0.5s ease;
+}
+
+
+.pet-panel:hover {
+  background-color: rgba(33,171,155,0.85);
+}
+
+.pet-panel svg {
+  height: 55%;
+  width: 90%;
+  margin: 30% 5% 0;
+}
+
+h2.pet-title, h3.pet-title{
+  color: rgba(255,255,255,.5);
+  position: absolute;
+  height: 30%;
+  width: 100%;
+  top: 70%;
+  left: 0;
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2.pet-title {
+  font-size: 9rem;
+}
+
+h3.pet-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  width: 90%;
+  margin: 0 5%;
+}
 
 
 label {
@@ -374,12 +506,12 @@ label {
 }
 
 
-label.pet-select > input {
+label.pet-select > input, label.stay-select > input {
   position: absolute;
   visibility: hidden; 
 }
 
-label.pet-select > input + svg { 
+label.pet-select > input + svg, .pet-title, label.stay-select > input + h2.ui.button.stay-select { 
   cursor: pointer;
 }
 
@@ -388,6 +520,11 @@ label.pet-select > input:checked + svg {
   stroke: white;
 }
 
+label.stay-select > input:checked + h2.ui.button.stay-select {
+  border-color: black;
+  background-color: white;
+  color: black;
+}
 
 .fancy {
   font: 2.5rem 'Sacramento';
@@ -404,58 +541,56 @@ a:hover{
 }
 
 
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fillIn {
-  from { fill-opacity: 0; }
-  to { fill-opacity: 1; }
-}
-
-@keyframes fillMain {
-  to {
-    stroke-dashoffset: 0;
-  }
-  from { fill: transparent; }
-  to { fill: #E9C3D6; }
-}
-
 
 @media all and (max-width:1200px) {
-  h1 {
-    font-size: 9rem;
-  }
+  h1.intro { font-size: 9rem;}
 
 }
 
 @media all and (max-width:1000px) {
-  h1 { font-size: 7rem; }
-  h1#right {  padding-right: 15px;}
-  h1#left { padding-left: 15px; }
+  h1.intro { font-size: 8rem; }
+/*  h1#right {  padding-right: 15px;}
+  h1#left { padding-left: 15px; }*/
   a.ui.button.choice{font-size:3rem;}
 
 }
 
 
 @media all and (max-width:800px) {
-  h1#right, h1#left { 
-    font-size: 7rem;
-    padding: 0;
-   }
-
-   #or { margin: 0; }
-  .svg-container {
+  #intro-bar{
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
   }
+
+  h1.intro { 
+    font-size: 8rem;
+  }
+
+  #intro-panel-one, #intro-panel-two, #intro-panel-three {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #intro-panel-one { 
+    align-items: flex-end;
+    height: 30%; 
+  }
+  #intro-panel-two { height: 40%; }
+  #intro-panel-three { 
+    align-items: flex-start;
+    height: 30%; 
+  }
+
+  .bg-text{
+    top: 1%;
+    font-size: 7rem;
+  }
+
+  #or { margin: 0; }
+
   svg#intro-heart {
     text-align: center;
-    height: 37%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     margin: 17px 0 -10px 0;
     /*padding: 0 15px 0 10px;*/
   }
@@ -490,20 +625,26 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
 
   h2.pet-title { font-size: 9rem; }
-  h3.pet-title { font-size: 4rem; }
+  h3.pet-title { font-size: 3.5rem; margin: 0 auto; }
  
 
 }
 
 
 @media all and (max-width:630px) {
-  h1 { font-size: 4rem; }
-  .section-title {font-size: 1.5rem;}
+  h1.intro { font-size: 7rem; }
+  .bg-text{
+    top: 1%;
+    font-size: 6rem;
+  }
+  .section-title {font-size: 1.5rem; margin: 5px auto !important;}
   .fancy { font-size: 1.6rem; margin-bottom: 0; }
   label { font-size: 1.4rem !important; line-height: 1.1 !important; }
+  footer { text-align: right; padding-right: 2%; }
 
 }
 

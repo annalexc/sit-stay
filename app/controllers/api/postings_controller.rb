@@ -1,7 +1,8 @@
 class Api::PostingsController < ApplicationController
 
   def index
-    render json: { postings: Posting.all }
+    postings = Posting.all.order(created_at: :desc)
+    render json: { postings: postings }
   end
 
 

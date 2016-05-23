@@ -1,0 +1,37 @@
+<h2 class="section-title">SitStay Postings</h2>
+  <div class="ui five stackable cards">
+    <div class="card" ng-repeat="posting in postings">
+      <div class="image">
+        <div ng-if="posting.pet_type == 'dog'">
+          <!-- Render the thumbnail -->
+          <%= image_tag("puppy.svg") %>
+        </div>
+        <div ng-if="posting.pet_type == 'cat'">
+          <!-- Render the thumbnail -->
+          <%= image_tag("cat.svg") %>
+        </div>
+        <div ng-if="posting.pet_type == 'other'">
+          <!-- Render the thumbnail -->
+          <%= image_tag("other.svg") %>
+        </div>
+
+      </div>
+      <div class="content">
+        <div class="header">{{ posting.name }}
+        <a><i class="right floated big remove circle icon" ng-click="removePosting(posting)"></i></a>
+        </div>
+        <div class="meta">Location: 
+          <span>{{ posting.city }},</span>
+          <span>{{ posting.state }} </span>
+        </div>
+        <div class="description">
+          <p>Start Date: {{ posting.start_date }}</p>
+          <p>End Date: {{ posting.end_date }}</p>
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+        </span>
+      </div>
+    </div>
+  </div>
