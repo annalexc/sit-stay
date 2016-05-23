@@ -11,13 +11,20 @@
         <input type="text" class="date-select" id="end-date" name="end_date" ng-model="end_date"/>
       </div>
     </div>
-    <div class="field">
-    <div class="ui center aligned container">
-      <button type="button" class="ui huge button selection" href="#viewpostings" ng-click="savePosting()">POST IT!</button>
-    </div>
-    </div>
   </div>
 
-  
 
+  <h2 class="next section-title">Anything else?</h2>
+  <div class="ui form" id="owner-form">
+    <div class="field">
+      <textarea rows="2" name="comments" ng-model="comments" placeholder="'My dog loves belly rubs!', 'My guinea pig will wheek endlessly for carrots!', etc.">
+      </textarea>
+    </div>
+
+    <div class="field">
+      <div class="ui center aligned container">
+        <button type="button" class="ui huge button selection" href="#viewpostings" ng-click="savePosting()">POST IT!</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 <h2 class="section-title">SitStay Postings</h2>
   <div class="ui four stackable cards">
     <div class="card" ng-repeat="posting in postings">
-      <div class="image">
+      <div class="image posting-image">
         <div ng-if="posting.pet_type == 'dog'">
           <!-- Render the thumbnail -->
           <%= image_tag("puppy.svg") %>
@@ -14,18 +14,19 @@
           <!-- Render the thumbnail -->
           <%= image_tag("other.svg") %>
         </div>
-
+        <div class="comments"> {{ posting.comments }}</div>
       </div>
       <div class="content">
         <div class="header">{{ posting.name }}
         <a><i class="big remove circle icon" ng-click="removePosting(posting)"></i></a>
         </div>
         <div class="meta">
-          Email: {{ posting.email }}
-          <p>Location: {{ posting.city }}, {{ posting.state }} </p>
+          <span>{{ posting.email }}</span>
+          <p>{{posting.street_address}}, {{ posting.city }}, {{ posting.state }} {{ posting.zipcode }}</p>
         </div>
         <div class="description">
           <p>Pet sitter needed from <span>{{ posting.start_date }}</span> to <span>{{ posting.end_date }}<span></p>
+
         </div>
       </div>
       <div class="extra content">

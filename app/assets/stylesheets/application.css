@@ -41,11 +41,18 @@ a, a:hover {
   margin: 0 auto;
 }
 
-.section-title {
+h2.section-title {
   text-align: center;
   font: 3.5rem 'Fredoka One';
-  margin: 5px auto 20px !important;
+  margin: 5px auto 20px;
 }
+
+h2.next.section-title {
+  font-size: 2.25rem;
+  color: #CD78A3;
+  margin-top: 40px;
+}
+
 
 .page-wrapper {
   position: absolute;
@@ -148,7 +155,8 @@ a, a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: min-content;}
+  min-height: min-content;
+}
 
 
 #viewpostings{ 
@@ -338,7 +346,7 @@ text#click-me {
 /* INPUT FIELD STYLING */
 /***********************/
 
-input[type="text"]{
+input[type="text"], textarea {
   background-color: transparent !important;
   border-radius: 0.5rem !important;
   padding: 12px !important;
@@ -362,8 +370,17 @@ input[type="text"].date-select {
   color: #CD78A3 !important;
 }
 
-input[type="text"].date-select:focus{ 
+input[type="text"].date-select:focus { 
   border: 4px solid #CD78A3 !important;
+}
+
+textarea {
+  border: 3px solid #CD78A3 !important;
+  color: #CD78A3 !important;
+}
+
+textarea::-webkit-input-placeholder {
+  color: rgba(205,120,163,0.6) !important;
 }
 
 
@@ -543,13 +560,41 @@ a:hover{
 i.big.remove.circle.icon {
   position: absolute;
   top: 1%;
-  right: 1%;
+  right: 0.5%;
+  z-index: 3;
 }
+
+.posting-image{
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+/*img {
+  margin-top: -10px;
+}*/
+.comments {
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 0.25rem;
+  top: 0;
+  padding: 12% 3% 3%;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font: 2rem 'Open Sans Condensed';
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+}
+
 
 span {
   font-weight: bold;
   color: #CD78A3;
 }
+
+
 
 
 @media all and (max-width:1200px) {
@@ -613,7 +658,8 @@ span {
     width: 16%;
   }
 
-  .section-title { font-size: 2rem; } 
+  .section-title { font-size: 2rem; }
+
 
   .pet-panel {
     float: left;
