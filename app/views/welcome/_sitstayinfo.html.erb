@@ -1,21 +1,19 @@
 <h2 class="section-title">And when will you need a pet sitter?</h2>
 <div class="ui text container">
-  <div class="ui huge form" id="owner-form">
+  
     <div class="two fields">
       <div class="required field">
         <label>Start Date</label>
-        <input type="text" class="date-select" id="start-date" name="start_date" ng-model="start_date"/>
+        <input type="text" required class="date-select" id="start-date" name="start_date" ng-model="start_date"/>
       </div>
       <div class="required field">
         <label>End Date</label>
-        <input type="text" class="date-select" id="end-date" name="end_date" ng-model="end_date"/>
+        <input type="text" required class="date-select" id="end-date" name="end_date" ng-model="end_date"/>
       </div>
     </div>
-  </div>
 
-
-  <h2 class="next section-title">Anything else?</h2>
-  <div class="ui form" id="owner-form">
+    <h2 class="next section-title">Anything else?</h2>
+ 
     <div class="field">
       <textarea rows="2" name="comments" ng-model="comments" placeholder="'My dog loves belly rubs!', 'My guinea pig will wheek endlessly for carrots!', etc.">
       </textarea>
@@ -23,8 +21,10 @@
 
     <div class="field">
       <div class="ui center aligned container">
-        <button type="button" class="ui huge button selection" href="#viewpostings" ng-click="savePosting()">POST IT!</button>
+        <button type="submit" id="submit" class="ui big button">POST IT!</button>
       </div>
     </div>
-  </div>
+
+  <h2 class="secondary-font emphasis" ng-show="post_success">Post successful! Scroll down to view postings.</h2>
+
 </div>

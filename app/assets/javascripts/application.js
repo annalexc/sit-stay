@@ -18,8 +18,15 @@
 $(function(){
   fadeInPaws();
   linkClickHandler();
-  petPanelBgHandler();
+  petPanelClickBgHandler();
+  lookingForClickHandler();
   setDateInputHandler();
+  setTextAreaInputHandler();
+  $('form').on("invalid", function(event) {
+    console.log(event.type);
+    debugger
+  });
+
 }); // End Document Ready
 
 
@@ -62,7 +69,8 @@ function linkClickHandler(){
     }, 250);
   });
 
-  $('.selection').on('click', function() {   
+  $('.selection').on('click', function(e) { 
+    e.preventDefault();  
     var target = $(this).attr('href');
     setTimeout(function(){
       $('html, body').animate({
@@ -74,7 +82,7 @@ function linkClickHandler(){
 
 
 // Change the background color of the selected pet panel
-function petPanelBgHandler(){ 
+function petPanelClickBgHandler(){ 
   $('.pet-panel').on('click', function() {
     var pets = $('.pet-panel');
     for(var i = 0; i<pets.length; i++){
@@ -85,6 +93,22 @@ function petPanelBgHandler(){
     $(this).find('.pet-title').css('color', 'black');
   });
 };
+
+function lookingForClickHandler(){ 
+  $('h2.button.selection').on('click', function() {
+    var sitOrStay = $('h2.button.selection');
+    for(var i = 0; i<sitOrStay.length; i++){
+      $(sitOrStay[i]).css('background-color', '');
+      $(sitOrStay[i]).css('color', '');
+      $(sitOrStay[i]).css('border-color', '');
+    }
+    $(this).css('background-color', 'white');
+    $(this).css('color', 'black');
+    $(this).css('border-color', 'black');
+  });
+};
+
+
 
 
 function setDateInputHandler(){
@@ -117,4 +141,17 @@ function setDateInputHandler(){
     });
   });
 
+};
+
+function setTextAreaInputHandler(){
+  $('textarea').on('input', function(){
+    console.log("Text Area changed!");
+    var comment = $(this).val();
+    var $textArea = $('textarea');
+    $textArea.val(comment).change();
+    var scope = angular.element($('textarea')).scope();
+    scope.$apply(function(){
+        scope.comments = comment;
+    });
+  });
 };

@@ -50,7 +50,7 @@ h2.section-title {
 h2.next.section-title {
   font-size: 2.25rem;
   color: #CD78A3;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 
@@ -112,6 +112,7 @@ h2.next.section-title {
   background: -webkit-linear-gradient(-60deg, #92E0DC 40%, #92E0DC 40%, #64D3CD 40%); 
   background: linear-gradient(120deg, #92E0DC 40%, #92E0DC 40%, #64D3CD 40%);
   display: flex;
+  min-height: 100vh;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -133,7 +134,7 @@ h2.next.section-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: min-content;
+  min-height: 100vh;
 }
 
 #petinfo{ 
@@ -142,7 +143,7 @@ h2.next.section-title {
   background: -moz-linear-gradient(-50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
   background: -webkit-linear-gradient(-50deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%); 
   background: linear-gradient(130deg, #A9EEE6 50%, #A9EEE6 50%, #7EE6DA 50%);
-  min-height: min-content;
+  min-height: 100vh;
 }
 
 #sitstayinfo{ 
@@ -155,7 +156,7 @@ h2.next.section-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: min-content;
+  min-height: 100vh;
 }
 
 
@@ -380,9 +381,13 @@ textarea {
 }
 
 textarea::-webkit-input-placeholder {
+  font-size: 1rem !important;
   color: rgba(205,120,163,0.6) !important;
 }
 
+label.white {
+  color: white !important;
+}
 
 .mint{
   background-color: #7EE6DA !important;
@@ -416,7 +421,7 @@ footer { bottom: 0; }
 .bg-text{
   position: absolute;
   width: 100%;
-  top: 15%; 
+  top: 16%; 
   text-align: center;
   z-index: 100;
 }
@@ -427,7 +432,7 @@ footer { bottom: 0; }
 }
 
 #bg-two {
-  top: 18%;
+  /*top: 18%;*/
   line-height: 1.2;
   color: rgba(52,183,176,0.9);
   font: 7rem 'Fredoka One';
@@ -461,8 +466,8 @@ h2.ui.button.selection{
   font-size: 5rem;
 }
 
-button.ui.button.selection{
-  margin: 50px auto 0;
+button.ui.button#submit{
+  margin: 35px auto 0;
   font-size: 3rem;
 }
 
@@ -475,7 +480,8 @@ p.stay-select{
 .pet-panel {
   position: relative;
   float: left;
-  height: 100%;
+  min-height: 100vh;
+  height: auto;
   width: 33.33%;
   transition: background-color 0.5s ease;
 }
@@ -486,6 +492,7 @@ p.stay-select{
 }
 
 .pet-panel svg {
+  position: absolute;
   height: 55%;
   width: 90%;
   margin: 30% 5% 0;
@@ -537,7 +544,10 @@ label.pet-select > input:checked + svg {
   stroke: white;
 }
 
-label.stay-select > input:checked + h2.ui.button.stay-select {
+label.stay-select > input + h2.ui.button.stay-select:hover{
+  color: black !important;
+}
+label.stay-select > input:checked > h2.ui.button.stay-select {
   border-color: black;
   background-color: white;
   color: black;
@@ -585,8 +595,11 @@ div.comments {
   z-index: 2;
 }
 
+i.circular.large.angle.double.down.icon{
+  display: none;
+}
 
-span {
+.emphasis {
   font-weight: bold;
   color: #CD78A3;
 }
@@ -601,10 +614,12 @@ span {
 
 @media all and (max-width:1000px) {
   h1.intro { font-size: 8rem; }
-/*  h1#right {  padding-right: 15px;}
-  h1#left { padding-left: 15px; }*/
-  a.ui.button.choice{font-size:3rem;}
 
+  .bg-text{
+    top: 2%;
+  }
+
+  a.ui.button.choice{font-size:3rem;}
 }
 
 
@@ -627,16 +642,24 @@ span {
     height: 30%; 
   }
   #intro-panel-two { height: 40%; }
+  
   #intro-panel-three { 
     align-items: flex-start;
     height: 30%; 
   }
 
-  .bg-text{
-    top: 1%;
+  .bg-text {
+    top: 2%;
     font-size: 7rem;
   }
 
+  #bg-one { font-size: 6rem; }
+
+  #bg-two { 
+    font-size: 4.5rem; 
+    line-height: 1;
+    top: 3%;
+  }
   #or { margin: 0; }
 
   svg#intro-heart {
@@ -647,9 +670,10 @@ span {
     /*padding: 0 15px 0 10px;*/
   }
 
-  a.ui.button.choice{
-    /*padding: 20px;*/
-    font-size: 2.5rem;
+  a.ui.button.selection, h2.ui.button.selection {
+    padding: 20px 30px;
+    font-size: 3rem;
+    margin: 20px auto;
   }
   .paw-container{
     width: 16%;
@@ -659,8 +683,9 @@ span {
 
 
   .pet-panel {
+    position: relative;
     float: left;
-    height: 33.33%;
+    min-height: 33.33vh;
     width: 100%;
   }
 
@@ -690,14 +715,45 @@ span {
 
 @media all and (max-width:630px) {
   h1.intro { font-size: 7rem; }
+  
   .bg-text{
     top: 1%;
     font-size: 6rem;
   }
-  .section-title {font-size: 1.5rem; margin: 5px auto !important;}
+  h2.section-title {font-size: 1.5rem; margin: 5px auto 15px;}
+
+  #bg-two { 
+    font-size: 3rem; 
+    line-height: 0.9;
+    top: 2.75%;
+  }
+  p.stay-select { font-size: 2.1rem; }
+
+  a.ui.button.selection, h2.ui.button.selection {
+    padding: 20px 30px;
+    font-size: 2.6rem;
+    margin: 10px auto;
+  }
+  
   .fancy { font-size: 1.6rem; margin-bottom: 0; }
+  
   label { font-size: 1.4rem !important; line-height: 1.1 !important; }
-  footer { text-align: right; padding-right: 2%; }
+
+  p.direction { 
+    display: inline-block;
+    vertical-align: bottom;
+    padding-bottom: 1% 
+  }
+
+  i.circular.large.angle.double.down.icon { display: inline-block; }
+  
+  i.circular.big.angle.double.down.icon { display: none; }
+  
+  footer { 
+    height: 9%;
+    text-align: right; 
+    padding-right: 2%; 
+  }
 
 }
 

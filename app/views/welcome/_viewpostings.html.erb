@@ -21,19 +21,19 @@
         <a><i class="big remove circle icon" ng-click="removePosting(posting)"></i></a>
         </div>
         <div class="meta">
-          <span>{{ posting.email }}</span>
+          <span class="emphasis">{{ posting.email }}</span>
           <p>{{posting.street_address}}, {{ posting.city }}, {{ posting.state }} {{ posting.zipcode }}</p>
         </div>
         <div class="description">
-          <p>Pet sitter needed from <span>{{ posting.start_date }}</span> to <span>{{ posting.end_date }}<span></p>
+          <p>Pet sitter needed from <span class="emphasis">{{ posting.start_date }}</span> to <span class="emphasis">{{ posting.end_date }}<span class="emphasis"></p>
 
         </div>
       </div>
       <div class="extra content">
-        <span ng-if="posting.is_stay_post == 1">
+        <span class="emphasis" ng-if="posting.is_stay_post == 1">
           <a class="ui pink tag label">Sit & Stay</a>
         </span>
-        <span ng-if="posting.is_stay_post == 0">
+        <span class="emphasis" ng-if="posting.is_stay_post == 0">
           <a class="ui teal tag label">Sit Only</a>
         </span>
       </div>

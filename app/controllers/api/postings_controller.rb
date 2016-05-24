@@ -34,7 +34,7 @@ class Api::PostingsController < ApplicationController
   private
   
   def posting_params
-    params.require(:posting).permit(:name, :email, :pet_type, :image_url, :street_address, :city, :state, :zipcode, :start_date, :end_date, :is_sit_post, :is_stay_post )
+    params.require(:posting).permit(:name, :email, :pet_type, :street_address, :comments, :city, :state, :zipcode, :start_date, :end_date, :is_stay_post )
   end
 
 

@@ -4,7 +4,7 @@ sitStay.controller("PostingsController", ["$scope", "$http", function( $scope, $
 
   $scope.postings = [];
   $scope.image_url;
-
+  $scope.post_success = false;
 
   $http.get('/api/postings/').then(function(response){
     $scope.postings = response.data.postings;
@@ -27,10 +27,11 @@ sitStay.controller("PostingsController", ["$scope", "$http", function( $scope, $
         is_stay_post: $scope.is_stay_post
       }
     }
-    // console.log(newPosting);
 
 
     $http.post('/api/postings/', newPosting).then(function(response) {
+      $scope.post_success = true;
+      console.log(response);
       $http.get('/api/postings/').then(function(res){
         $scope.postings = res.data.postings;
         });
